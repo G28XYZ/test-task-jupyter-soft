@@ -20,7 +20,7 @@ function Header() {
             </li>
             <li className="header__list-item">
               <NavLink to="/" className="header__link">
-                Serbices
+                Services
               </NavLink>
             </li>
             <li className="header__list-item">

@@ -12,6 +12,8 @@ export const IMAGES_ACTIONS = {
   SET_IMAGES_LIST: "SET_IMAGES_LIST",
   GET_MORE_CARDS: "GET_MORE_CARDS",
   CHANGE_TYPE: "CHANGE_TYPE",
+  SET_ACTIVE_CARD: "SET_ACTIVE_CARD",
+  DELETE_CARD: "DELETE_CARD",
 };
 
 export const fetchImages = (dispatch: Dispatch<IAction>) => {

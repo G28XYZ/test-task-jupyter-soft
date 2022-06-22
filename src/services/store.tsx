@@ -16,6 +16,7 @@ const initialState: IState = {
   showedCards: [],
   countCards: 9,
   currentType: "Show All",
+  activeCard: null,
 };
 
 const GlobalContext = createContext<IState>(initialState);

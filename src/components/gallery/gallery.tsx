@@ -1,4 +1,4 @@
-import { MouseEvent } from "react";
+import { MouseEvent, useMemo } from "react";
 import { IMAGES_ACTIONS } from "../../services/actions/images";
 import { useStore } from "../../services/store";
 import { namesTypeCard } from "../../utils/constants";
@@ -8,7 +8,7 @@ import "./gallery.scss";
 
 function Gallery() {
   const [state, dispatch] = useStore();
-  const { showedCards, currentType } = state;
+  const { showedCards, currentType, imagesList, countCards } = state;
 
   const handleClickMore = () => {
     dispatch({ type: IMAGES_ACTIONS.GET_MORE_CARDS });
@@ -16,10 +16,14 @@ function Gallery() {
 
   const navigationList = ["Show All", ...namesTypeCard];
 
-  const filteredImageList = (showedCards as IImageCard[]).filter((item) => {
-    if (currentType === "Show All") return true;
-    return item.type === currentType;
-  });
+  const filteredImageList = useMemo(
+    () =>
+      (showedCards as IImageCard[]).filter((item) => {
+        if (currentType === "Show All") return true;
+        return item.type === currentType;
+      }),
+    [showedCards.length, currentType]
+  );
 
   const handleClickType = (e: MouseEvent<HTMLLIElement>) => {
     const target = e.target as HTMLLIElement;
@@ -47,16 +51,20 @@ function Gallery() {
         </ul>
       </nav>
       <ul className="gallery__cardslist">
-        {filteredImageList.map((image) => (
-          <Card key={image.id} card={image} />
-        ))}
+        {filteredImageList.length === 0
+          ? "Ничего не найдено"
+          : filteredImageList.map((image) => (
+              <Card key={image.id} card={image} />
+            ))}
       </ul>
-      <button
-        className="gallery__button button button_default"
-        onClick={handleClickMore}
-      >
-        Load more
-      </button>
+      {imagesList.length > countCards && (
+        <button
+          className="gallery__button button button_default"
+          onClick={handleClickMore}
+        >
+          Load more
+        </button>
+      )}
     </section>
   );
 }
