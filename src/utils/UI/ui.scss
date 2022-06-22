@@ -1,0 +1,40 @@
+$default-color: #fff;
+$primary-color: rgba(239, 109, 88, 1);
+$secondary-color: rgba(181, 80, 248, 1);
+
+.button {
+  max-width: 137px;
+  max-height: 48px;
+  width: 100%;
+  padding: 14px 0;
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  background-color: transparent;
+  box-sizing: border-box;
+  color: white;
+  font-size: 14px;
+  line-height: calc(18 / 14);
+  cursor: pointer;
+  transition: opacity 0.6s;
+  &:hover {
+    opacity: 0.7;
+  }
+  &_default {
+    max-width: 170px;
+    background-color: $default-color;
+    border-color: $default-color;
+    filter: drop-shadow(0px 3px 9px rgba(57, 20, 0, 0.1));
+    color: rgba(57, 20, 0, 1);
+  }
+  &_primary {
+    max-width: 170px;
+    background-color: $primary-color;
+    border-color: $primary-color;
+  }
+  &_secondary {
+    max-width: 170px;
+    background-color: $secondary-color;
+    border-color: $secondary-color;
+  }
+}

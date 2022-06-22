@@ -1,0 +1,59 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(40, 41, 62, 1);
+  color: white;
+  &__logo {
+    display: flex;
+    cursor: pointer;
+    align-items: flex-end;
+    gap: 15px;
+    &-name {
+      margin: 0;
+      font-size: 24px;
+      line-height: calc(32 / 24);
+    }
+    &-image {
+      width: 45px;
+      height: 45px;
+    }
+  }
+  &__menu {
+    max-width: 1440px;
+    padding: 16px 135px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+  &__list {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    gap: 100px;
+    &-item {
+      cursor: pointer;
+      transition: opacity 0.6s;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+  &__title {
+    margin: 0;
+    font-size: 72px;
+    line-height: calc(95 / 72);
+    font-weight: 400;
+    padding-top: 80px;
+    padding-bottom: 32px;
+  }
+  &__about {
+    text-align: center;
+    max-width: 570px;
+    line-height: calc(33 / 16);
+    color: rgba(255, 255, 255, 0.6);
+    padding-bottom: 58px;
+  }
+}
