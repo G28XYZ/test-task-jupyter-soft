@@ -1,6 +1,6 @@
 import { Dispatch } from "react";
 import api from "../../utils/api";
-import { address, namesTypeCard } from "../../utils/constants";
+import { address, namesCard, namesTypeCard } from "../../utils/constants";
 import { IAction } from "../../utils/types";
 
 const shortid = require("shortid");
@@ -19,11 +19,14 @@ export const fetchImages = (dispatch: Dispatch<IAction>) => {
   api
     .getImages()
     .then((data) => {
-      const imagesList = data.map((item: { image: { url: string } }) => ({
-        image: `${address}${item.image.url}`,
-        id: shortid.generate(),
-        type: namesTypeCard[Math.floor(Math.random() * namesTypeCard.length)],
-      }));
+      const imagesList = data.map(
+        (item: { image: { url: string } }, index: number) => ({
+          image: `${address}${item.image.url}`,
+          id: shortid.generate(),
+          type: namesTypeCard[Math.floor(Math.random() * namesTypeCard.length)],
+          name: namesCard[index] || "",
+        })
+      );
       dispatch({ type: IMAGES_ACTIONS.SET_IMAGES_LIST, imagesList });
       dispatch({ type: IMAGES_ACTIONS.REQUEST_SUCCESS });
     })

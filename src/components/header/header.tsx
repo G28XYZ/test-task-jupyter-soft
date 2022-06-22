@@ -35,7 +35,9 @@ function Header() {
             </li>
           </ul>
         </nav>
-        <button className="header__button button">CONTACT</button>
+        <button className="header__button button button_outline">
+          CONTACT
+        </button>
       </div>
       <h1 className="header__title">Portfolio</h1>
       <p className="header__about">

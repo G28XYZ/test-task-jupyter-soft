@@ -15,5 +15,6 @@ export interface IAction {
 export interface IImageCard {
   image: string;
   type: string;
+  name: string;
   id: string;
 }
