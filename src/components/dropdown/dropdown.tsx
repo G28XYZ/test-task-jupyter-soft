@@ -8,7 +8,7 @@ function Dropdown({ navigationList }: { navigationList: string[] }) {
   const { currentType } = state;
   const refOption = useRef(null);
 
-  const handleClickType = (e: MouseEvent<HTMLLIElement>) => {
+  const handleChangeType = (e: MouseEvent<HTMLLIElement>) => {
     const target = e.target as HTMLLIElement;
     dispatch({
       type: IMAGES_ACTIONS.CHANGE_TYPE,
@@ -40,7 +40,7 @@ function Dropdown({ navigationList }: { navigationList: string[] }) {
               currentType !== name && (
                 <li
                   key={name}
-                  onClick={handleClickType}
+                  onClick={handleChangeType}
                   className="gallery__list-item dropdown-option-item"
                 >
                   {name}

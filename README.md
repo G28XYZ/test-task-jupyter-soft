@@ -50,7 +50,7 @@ GITHUB
 
 `git clone https://github.com/G28XYZ/test-task-jupyter-soft.git`
 
-#### Перейдите в папку склонированного репозитория
+#### Перейдите в папку клонированного репозитория
 
 `cd test-task-jupyter-soft`
 

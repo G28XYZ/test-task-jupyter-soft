@@ -10,7 +10,6 @@ import "./gallery.scss";
 function Gallery() {
   const [state, dispatch] = useStore();
   const { showedCards, currentType, imagesList, countCards } = state;
-  const refOption = useRef(null);
 
   const handleClickMore = () => {
     dispatch({ type: IMAGES_ACTIONS.GET_MORE_CARDS });
@@ -27,7 +26,7 @@ function Gallery() {
     [showedCards.length, currentType]
   );
 
-  const handleClickType = (e: MouseEvent<HTMLLIElement>) => {
+  const handleChangeType = (e: MouseEvent<HTMLLIElement>) => {
     const target = e.target as HTMLLIElement;
     dispatch({
       type: IMAGES_ACTIONS.CHANGE_TYPE,
@@ -43,7 +42,7 @@ function Gallery() {
           {navigationList.map((type, index) => (
             <li
               key={index}
-              onClick={handleClickType}
+              onClick={handleChangeType}
               className={`gallery__list-item ${
                 currentType === type && "gallery__list-item_active"
               }`}
