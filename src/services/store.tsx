@@ -7,6 +7,7 @@ import {
   ReactNode,
   Context,
 } from "react";
+import { INITIAL_COUNT } from "../utils/constants";
 import { IAction, IState } from "../utils/types";
 import { reduceImages } from "./reducers/images";
 
@@ -14,7 +15,7 @@ const initialState: IState = {
   request: true,
   imagesList: [],
   showedCards: [],
-  countCards: 9,
+  countCards: INITIAL_COUNT,
   currentType: "Show All",
   activeCard: null,
 };

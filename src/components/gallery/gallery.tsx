@@ -1,7 +1,7 @@
-import { MouseEvent, useMemo, useRef } from "react";
+import { MouseEvent, useMemo } from "react";
 import { IMAGES_ACTIONS } from "../../services/actions/images";
 import { useStore } from "../../services/store";
-import { namesTypeCard } from "../../utils/constants";
+import { namesTypeCard, NOT_FOUND_MESSAGE } from "../../utils/constants";
 import { IImageCard } from "../../utils/types";
 import Card from "../card/card";
 import Dropdown from "../dropdown/dropdown";
@@ -55,9 +55,7 @@ function Gallery() {
       <ul className="gallery__cardslist">
         {filteredImageList.length === 0 ? (
           <>
-            <p className="gallery__notfound-message">
-              Ничего не найдено ¯\_(ツ)_/¯
-            </p>
+            <p className="gallery__notfound-message">{NOT_FOUND_MESSAGE}</p>
           </>
         ) : (
           filteredImageList.map((image) => <Card key={image.id} card={image} />)

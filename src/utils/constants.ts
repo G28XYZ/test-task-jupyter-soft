@@ -13,3 +13,6 @@ export const namesCard = [
   "CalC",
   "Architect",
 ];
+
+export const NOT_FOUND_MESSAGE = "Ничего не найдено ¯_(ツ)_/¯";
+export const INITIAL_COUNT = 9;

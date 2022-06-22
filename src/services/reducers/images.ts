@@ -1,4 +1,4 @@
-import { namesCard } from "../../utils/constants";
+import { INITIAL_COUNT, namesCard } from "../../utils/constants";
 import { IAction, IImageCard, IState } from "../../utils/types";
 import { IMAGES_ACTIONS } from "../actions/images";
 
@@ -21,11 +21,11 @@ export const reduceImages = (state: IState, action: IAction) => {
       };
 
     case IMAGES_ACTIONS.GET_MORE_CARDS:
-      const countCards = state.countCards + 9;
+      const countCards = state.countCards + INITIAL_COUNT;
       const showedCards = state.imagesList
-        .slice(countCards - 9, countCards)
+        .slice(countCards - INITIAL_COUNT, countCards)
         .map((item, index) => {
-          item.name = namesCard[index] + countCards / 9;
+          item.name = namesCard[index] + countCards / INITIAL_COUNT;
           return item;
         });
       return {
