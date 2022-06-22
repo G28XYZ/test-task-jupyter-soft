@@ -8,15 +8,20 @@ import {
   Context,
 } from "react";
 import { IAction, IState } from "../utils/types";
+import { reduceImages } from "./reducers/images";
 
-const initialState: IState = {};
+const initialState: IState = {
+  request: true,
+  imagesList: [],
+  countCards: 9,
+};
 
 const GlobalContext = createContext<IState>(initialState);
 
 const reducers = (state: IState, action: IAction) => {
   return {
     ...state,
-    ...Object.assign(state, {}),
+    ...Object.assign(state, reduceImages(state, action)),
   };
 };
 

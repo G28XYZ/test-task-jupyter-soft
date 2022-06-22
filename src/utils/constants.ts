@@ -1,1 +1,3 @@
-export const moviesApiAddress = "https://api.nomoreparties.co";
+export const address = "https://api.nomoreparties.co";
+
+export const namesTypeCard = ["Design", "Branding", "Illustration", "Motion"];

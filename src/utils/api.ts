@@ -1,4 +1,4 @@
-import { moviesApiAddress } from "./constants";
+import { address } from "./constants";
 
 class Api {
   _address: string;
@@ -15,13 +15,13 @@ class Api {
     return response.ok ? response.json() : Promise.reject(response.status);
   }
 
-  async getMovies() {
+  async getImages() {
     return await fetch(`${this._address}/beatfilm-movies`).then(
       this._handleResponse
     );
   }
 }
 
-const api = new Api(moviesApiAddress);
+const api = new Api(address);
 
 export default api;
