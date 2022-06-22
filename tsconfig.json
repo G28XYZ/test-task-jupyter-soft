@@ -27,5 +27,5 @@
       "es2015.iterable"
     ]
   },
-  "include": ["src/**/*", "src/**/*.tsx", "src/**/*.ts", "src/index.jsx"]
+  "include": ["src/**/*", "src/**/*.tsx", "src/**/*.ts", "src/index.tsx"]
 }
