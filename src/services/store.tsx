@@ -13,7 +13,9 @@ import { reduceImages } from "./reducers/images";
 const initialState: IState = {
   request: true,
   imagesList: [],
+  showedCards: [],
   countCards: 9,
+  currentType: "Show All",
 };
 
 const GlobalContext = createContext<IState>(initialState);

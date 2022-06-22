@@ -11,6 +11,7 @@ export const IMAGES_ACTIONS = {
   REQUEST_FAILED: "REQUEST_FAILED",
   SET_IMAGES_LIST: "SET_IMAGES_LIST",
   GET_MORE_CARDS: "GET_MORE_CARDS",
+  CHANGE_TYPE: "CHANGE_TYPE",
 };
 
 export const fetchImages = (dispatch: Dispatch<IAction>) => {
