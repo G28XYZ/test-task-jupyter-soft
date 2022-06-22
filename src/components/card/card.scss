@@ -30,6 +30,10 @@
     color: rgba(57, 20, 0, 1);
     border-radius: 19px;
     cursor: pointer;
+    transition: transform 0.6s;
+    &:hover {
+      transform: scale(1.1);
+    }
     &-delete {
       position: absolute;
       top: 20px;
