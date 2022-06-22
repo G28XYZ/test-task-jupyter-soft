@@ -1,4 +1,4 @@
-# Тестовое задание Junior Frontend в Jupiter soft
+# Тестовое задание Junior Frontend в Jupyter soft
 
 ## Demo:
 
