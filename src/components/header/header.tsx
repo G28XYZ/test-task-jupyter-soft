@@ -11,7 +11,7 @@ function Header() {
           <img src={logo} alt="" className="header__logo-image" />
           <p className="header__logo-name">Agency</p>
         </div>
-        <nav>
+        <nav className="header__navigation">
           <ul className="header__list">
             <li className="header__list-item">
               <NavLink to="/" className="header__link">

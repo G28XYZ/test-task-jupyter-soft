@@ -62,3 +62,11 @@
     }
   }
 }
+
+@media screen and (max-width: 640px) {
+  .card {
+    &__info {
+      left: 25px;
+    }
+  }
+}
