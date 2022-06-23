@@ -26,11 +26,7 @@ function Dropdown({ navigationList }: { navigationList: string[] }) {
   return (
     <div className="dropdown" onClick={onClickOption}>
       <div className="dropdown-container">
-        <button
-          onClick={onClickOption}
-          className="dropdown-button"
-          type="button"
-        ></button>
+        <button className="dropdown-button" type="button"></button>
         <p className="gallery__list-item dropdown-text">{currentType}</p>
       </div>
       <div ref={refOption} className="dropdown-option">
